@@ -17,6 +17,7 @@ app.post("/item", async (req, res) => {
             "INSERT INTO crud (description) VALUES($1) RETURNING *",
             [description]
         );
+        console.log(req.body)
 
         res.json(newItem.rows[0]);
 
